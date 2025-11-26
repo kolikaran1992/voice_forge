@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
 import uuid
+import random
+import time
 from pathlib import Path
 from crongle import KernelLauncher, KAGGLE_USER_NAME
 from voice_forge.omniconf import config, logger
@@ -8,6 +9,14 @@ PRIVATE_DATASET = f"{KAGGLE_USER_NAME}/hf-token"
 
 SCRIPT_PATH = "voice_forge/remote_dataset_augment_job.py"  # code to run remotely
 OUTPUT_BASE_DIR = config.yt_tts_data_augment_output  # results downloaded here
+
+
+def wait_with_jitter(min_minutes=2, max_minutes=15):
+    jitter_seconds = random.randint(min_minutes * 60, max_minutes * 60)
+    logger.info(
+        f"Waiting {jitter_seconds // 60}m {jitter_seconds % 60}s before submission..."
+    )
+    time.sleep(jitter_seconds)
 
 
 def submit():
@@ -45,4 +54,5 @@ def submit():
 
 
 if __name__ == "__main__":
+    wait_with_jitter()
     submit()
