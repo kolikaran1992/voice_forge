@@ -1,0 +1,10 @@
+[default]
+base_data_path = "@jinja {{this.home_dir}}/Data/VOICE_FORGE"
+logger_name = "voice_forge"
+now_iso = "@jinja {{this._get_now_iso(this.tz)}}"
+start_ts = "@jinja {{this._get_start_ts(this.tz)}}"
+tz = "Asia/Kolkata"
+
+yt_stt_output = '@jinja {{this.home_dir}}/Data/youtube_scraper/kaggle_outputs'
+yt_tts_data_augment_output = '@jinja {{this.base_data_path}}/data_augment_job_outputs'
+yt_tts_hf_base = '@jinja {{this.base_data_path}}/yt_tts_hf'
