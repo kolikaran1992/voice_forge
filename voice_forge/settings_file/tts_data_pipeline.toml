@@ -1,0 +1,2 @@
+[default]
+kaggle_tts_dataset = '@jinja {{this.base_data_path}}/kaggle_tts_dataset'
