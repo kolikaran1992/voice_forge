@@ -658,7 +658,7 @@ files = []
 develop = false
 
 [package.dependencies]
-dynalog = {git = "ssh://git@github.com/kolikaran1992/dynalog.git"}
+dynalog = {git = "https://github.com/kolikaran1992/dynalog.git"}
 kaggle = ">=1.7.4.5,<2.0.0.0"
 python-crontab = ">=3.3.0,<4.0.0"
 
@@ -666,7 +666,7 @@ python-crontab = ">=3.3.0,<4.0.0"
 type = "git"
 url = "https://github.com/kolikaran1992/crongle.git"
 reference = "HEAD"
-resolved_reference = "1a8e5120cc79dca20dc6c04bb8375caf6973dabd"
+resolved_reference = "2fa25b3df5531201ec910250d98930564a108cea"
 
 [[package]]
 name = "csvw"
@@ -827,7 +827,7 @@ requests = ">=2.32.5,<3.0.0"
 
 [package.source]
 type = "git"
-url = "ssh://git@github.com/kolikaran1992/dynalog.git"
+url = "https://github.com/kolikaran1992/dynalog.git"
 reference = "HEAD"
 resolved_reference = "62cbc8ee71241f7058488de48d0db5b4f204f01a"
 
