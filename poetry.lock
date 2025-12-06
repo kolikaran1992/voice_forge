@@ -664,7 +664,7 @@ python-crontab = ">=3.3.0,<4.0.0"
 
 [package.source]
 type = "git"
-url = "ssh://git@github.com/kolikaran1992/crongle.git"
+url = "https://github.com/kolikaran1992/crongle.git"
 reference = "HEAD"
 resolved_reference = "1a8e5120cc79dca20dc6c04bb8375caf6973dabd"
 
@@ -4099,4 +4099,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10, <4.0"
-content-hash = "5f7ef4cf86c00313384617b5ad1d486e8f5eac9011b5f8d87bc2b241ae3a7b20"
+content-hash = "936ac39609eba4eb65f3e8b2ac635dee9153157616fd60acb406a49391b5ec17"

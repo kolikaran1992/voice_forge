@@ -14,7 +14,7 @@ dependencies = [
     "pytest (>=9.0.1,<10.0.0)",
     "huggingface-hub (>=1.1.5,<2.0.0)",
     "pandas (>=2.3.3,<3.0.0)",
-    "crongle @ git+ssh://git@github.com/kolikaran1992/crongle.git",
+    "crongle @ git+https://github.com/kolikaran1992/crongle.git",
     "kagglehub (>=0.3.13,<0.4.0)",
     "torch (>=2.3.0,<2.4.0)",
     "torchaudio (>=2.3.0,<2.4.0)",
