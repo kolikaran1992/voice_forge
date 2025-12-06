@@ -1,41 +1,39 @@
 [project]
-name = "voice-forge"
-version = "0.1.0"
-description = ""
 authors = [
-    {name = "kolikaran"}
+  {name = "kolikaran"},
 ]
-readme = "README.md"
-requires-python = ">=3.10, <4.0"
 dependencies = [
-    "dynaconf (>=3.2.12,<4.0.0)",
-    "jinja2 (>=3.1.6,<4.0.0)",
-    "pytz (>=2025.2,<2026.0)",
-    "pytest (>=9.0.1,<10.0.0)",
-    "huggingface-hub (>=1.1.5,<2.0.0)",
-    "pandas (>=2.3.3,<3.0.0)",
-    "crongle @ git+https://github.com/kolikaran1992/crongle.git",
-    "kagglehub (>=0.3.13,<0.4.0)",
-    "torch (>=2.3.0,<2.4.0)",
-    "torchaudio (>=2.3.0,<2.4.0)",
-    "librosa (>=0.10.1,<0.11.0)",
-    "numpy (>=1.26,<2.0)",
-    "matplotlib (>=3.8,<4.0)",
-    "ipython (>=8.20,<9.0)",
-    "world4py (>=0.1.1,<0.2.0)",
-    "unidecode (>=1.4.0,<2.0.0)",
-    "phonemizer (>=3.3.0,<4.0.0)",
-    "cython (>=3.2.2,<4.0.0)",
+  "dynaconf (>=3.2.12,<4.0.0)",
+  "jinja2 (>=3.1.6,<4.0.0)",
+  "pytz (>=2025.2,<2026.0)",
+  "pytest (>=9.0.1,<10.0.0)",
+  "huggingface-hub (>=1.1.5,<2.0.0)",
+  "pandas (>=2.3.3,<3.0.0)",
+  "crongle @ git+https://github.com/kolikaran1992/crongle.git",
+  "kagglehub (>=0.3.13,<0.4.0)",
+  "torch==2.9.0",
+  "torchaudio==2.9.0",
+  "librosa (>=0.10.1,<0.11.0)",
+  "numpy (>=1.26,<2.0)",
+  "matplotlib (>=3.8,<4.0)",
+  "ipython (>=8.20,<9.0)",
+  "world4py (>=0.1.1,<0.2.0)",
+  "unidecode (>=1.4.0,<2.0.0)",
+  "phonemizer (>=3.3.0,<4.0.0)",
+  "cython (>=3.2.2,<4.0.0)",
 ]
-
+description = ""
+name = "voice-forge"
+readme = "README.md"
+requires-python = ">=3.10, <3.15"
+version = "0.1.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.11.0"
-isort = "^7.0.0"
 cython = "^3.2.2"
+isort = "^7.0.0"
 setuptools = "^80.9.0"
-
