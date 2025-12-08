@@ -22,4 +22,7 @@ setup(
     packages=find_packages(include=["voice_forge", "voice_forge.*"]),
     ext_modules=extensions,
     include_package_data=True,
+    package_data={
+        "voice_forge": ["settings_file/*.toml"],
+    },
 )

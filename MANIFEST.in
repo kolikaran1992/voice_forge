@@ -1,1 +1,2 @@
 recursive-include voice_forge *.pyx *.pxd *.c
+recursive-include voice_forge/settings_file *.toml
