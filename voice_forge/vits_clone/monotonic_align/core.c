@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "monotonic_align.core",
+        "name": "voice_forge.vits_clone.monotonic_align.core",
         "sources": [
-            "core.pyx"
+            "voice_forge/vits_clone/monotonic_align/core.pyx"
         ]
     },
-    "module_name": "monotonic_align.core"
+    "module_name": "voice_forge.vits_clone.monotonic_align.core"
 }
 END: Cython Metadata */
 
@@ -1126,8 +1126,8 @@ static int __Pyx_init_co_variables(void) {
   #endif
 #endif
 
-#define __PYX_HAVE__monotonic_align__core
-#define __PYX_HAVE_API__monotonic_align__core
+#define __PYX_HAVE__voice_forge__vits_clone__monotonic_align__core
+#define __PYX_HAVE_API__voice_forge__vits_clone__monotonic_align__core
 /* Early includes */
 #include "pythread.h"
 #include <string.h>
@@ -1339,7 +1339,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char* const __pyx_f[] = {
-  "core.pyx",
+  "voice_forge/vits_clone/monotonic_align/core.pyx",
   "<stringsource>",
 };
 /* #### Code section: utility_code_proto_before_types ### */
@@ -1599,16 +1599,16 @@ struct __pyx_array_obj;
 struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
-struct __pyx_opt_args_15monotonic_align_4core_maximum_path_each;
+struct __pyx_opt_args_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_each;
 
-/* "monotonic_align/core.pyx":7
+/* "voice_forge/vits_clone/monotonic_align/core.pyx":7
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * cdef void maximum_path_each(int[:,::1] path, float[:,::1] value, int t_y, int t_x, float max_neg_val=-1e9) nogil:             # <<<<<<<<<<<<<<
  *   cdef int x
  *   cdef int y
 */
-struct __pyx_opt_args_15monotonic_align_4core_maximum_path_each {
+struct __pyx_opt_args_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_each {
   int __pyx_n;
   float max_neg_val;
 };
@@ -2886,7 +2886,7 @@ static PyObject *__pyx_memoryviewslice__get_base(struct __pyx_memoryviewslice_ob
 
 /* Module declarations from "cython" */
 
-/* Module declarations from "monotonic_align.core" */
+/* Module declarations from "voice_forge.vits_clone.monotonic_align.core" */
 static PyObject *__pyx_collections_abc_Sequence = 0;
 static PyObject *generic = 0;
 static PyObject *strided = 0;
@@ -2895,8 +2895,8 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
-static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice, __Pyx_memviewslice, int, int, struct __pyx_opt_args_15monotonic_align_4core_maximum_path_each *__pyx_optional_args); /*proto*/
-static void __pyx_f_15monotonic_align_4core_maximum_path_c(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
+static void __pyx_f_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice, __Pyx_memviewslice, int, int, struct __pyx_opt_args_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_each *__pyx_optional_args); /*proto*/
+static void __pyx_f_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_c(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
 static int __pyx_array_allocate_buffer(struct __pyx_array_obj *); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char const *, char *); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo const *); /*proto*/
@@ -2935,11 +2935,11 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, 
 static const __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, __PYX_IS_UNSIGNED(int) ? 'U' : 'I', __PYX_IS_UNSIGNED(int), 0 };
 static const __Pyx_TypeInfo __Pyx_TypeInfo_float = { "float", NULL, sizeof(float), { 0 }, 0, 'R', 0, 0 };
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "monotonic_align.core"
-extern int __pyx_module_is_main_monotonic_align__core;
-int __pyx_module_is_main_monotonic_align__core = 0;
+#define __Pyx_MODULE_NAME "voice_forge.vits_clone.monotonic_align.core"
+extern int __pyx_module_is_main_voice_forge__vits_clone__monotonic_align__core;
+int __pyx_module_is_main_voice_forge__vits_clone__monotonic_align__core = 0;
 
-/* Implementation of "monotonic_align.core" */
+/* Implementation of "voice_forge.vits_clone.monotonic_align.core" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin___import__;
 static PyObject *__pyx_builtin_enumerate;
@@ -2991,7 +2991,7 @@ static void __pyx_memoryviewslice___pyx_pf_15View_dot_MemoryView_16_memoryviewsl
 static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED struct __pyx_memoryviewslice_obj *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUSED struct __pyx_memoryviewslice_obj *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_15View_dot_MemoryView___pyx_unpickle_Enum(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_15monotonic_align_4core_maximum_path_c(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_paths, __Pyx_memviewslice __pyx_v_values, __Pyx_memviewslice __pyx_v_t_ys, __Pyx_memviewslice __pyx_v_t_xs); /* proto */
+static PyObject *__pyx_pf_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_c(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_paths, __Pyx_memviewslice __pyx_v_values, __Pyx_memviewslice __pyx_v_t_ys, __Pyx_memviewslice __pyx_v_t_xs); /* proto */
 static PyObject *__pyx_tp_new_array(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_Enum(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_memoryview(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -3103,22 +3103,22 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_kp_u_collections_abc __pyx_string_tab[27]
 #define __pyx_kp_u_contiguous_and_direct __pyx_string_tab[28]
 #define __pyx_kp_u_contiguous_and_indirect __pyx_string_tab[29]
-#define __pyx_kp_u_core_pyx __pyx_string_tab[30]
-#define __pyx_kp_u_disable __pyx_string_tab[31]
-#define __pyx_kp_u_enable __pyx_string_tab[32]
-#define __pyx_kp_u_gc __pyx_string_tab[33]
-#define __pyx_kp_u_got __pyx_string_tab[34]
-#define __pyx_kp_u_got_differing_extents_in_dimensi __pyx_string_tab[35]
-#define __pyx_kp_u_isenabled __pyx_string_tab[36]
-#define __pyx_kp_u_itemsize_0_for_cython_array __pyx_string_tab[37]
-#define __pyx_kp_u_no_default___reduce___due_to_non __pyx_string_tab[38]
-#define __pyx_kp_u_object __pyx_string_tab[39]
-#define __pyx_kp_u_self_name_is_not_None __pyx_string_tab[40]
-#define __pyx_kp_u_strided_and_direct __pyx_string_tab[41]
-#define __pyx_kp_u_strided_and_direct_or_indirect __pyx_string_tab[42]
-#define __pyx_kp_u_strided_and_indirect __pyx_string_tab[43]
-#define __pyx_kp_u_unable_to_allocate_array_data __pyx_string_tab[44]
-#define __pyx_kp_u_unable_to_allocate_shape_and_str __pyx_string_tab[45]
+#define __pyx_kp_u_disable __pyx_string_tab[30]
+#define __pyx_kp_u_enable __pyx_string_tab[31]
+#define __pyx_kp_u_gc __pyx_string_tab[32]
+#define __pyx_kp_u_got __pyx_string_tab[33]
+#define __pyx_kp_u_got_differing_extents_in_dimensi __pyx_string_tab[34]
+#define __pyx_kp_u_isenabled __pyx_string_tab[35]
+#define __pyx_kp_u_itemsize_0_for_cython_array __pyx_string_tab[36]
+#define __pyx_kp_u_no_default___reduce___due_to_non __pyx_string_tab[37]
+#define __pyx_kp_u_object __pyx_string_tab[38]
+#define __pyx_kp_u_self_name_is_not_None __pyx_string_tab[39]
+#define __pyx_kp_u_strided_and_direct __pyx_string_tab[40]
+#define __pyx_kp_u_strided_and_direct_or_indirect __pyx_string_tab[41]
+#define __pyx_kp_u_strided_and_indirect __pyx_string_tab[42]
+#define __pyx_kp_u_unable_to_allocate_array_data __pyx_string_tab[43]
+#define __pyx_kp_u_unable_to_allocate_shape_and_str __pyx_string_tab[44]
+#define __pyx_kp_u_voice_forge_vits_clone_monotonic_2 __pyx_string_tab[45]
 #define __pyx_n_u_ASCII __pyx_string_tab[46]
 #define __pyx_n_u_Ellipsis __pyx_string_tab[47]
 #define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[48]
@@ -3154,41 +3154,41 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_memview __pyx_string_tab[78]
 #define __pyx_n_u_mode __pyx_string_tab[79]
 #define __pyx_n_u_module __pyx_string_tab[80]
-#define __pyx_n_u_monotonic_align_core __pyx_string_tab[81]
-#define __pyx_n_u_name __pyx_string_tab[82]
-#define __pyx_n_u_name_2 __pyx_string_tab[83]
-#define __pyx_n_u_ndim __pyx_string_tab[84]
-#define __pyx_n_u_new __pyx_string_tab[85]
-#define __pyx_n_u_obj __pyx_string_tab[86]
-#define __pyx_n_u_pack __pyx_string_tab[87]
-#define __pyx_n_u_paths __pyx_string_tab[88]
-#define __pyx_n_u_pop __pyx_string_tab[89]
-#define __pyx_n_u_pyx_checksum __pyx_string_tab[90]
-#define __pyx_n_u_pyx_state __pyx_string_tab[91]
-#define __pyx_n_u_pyx_type __pyx_string_tab[92]
-#define __pyx_n_u_pyx_unpickle_Enum __pyx_string_tab[93]
-#define __pyx_n_u_pyx_vtable __pyx_string_tab[94]
-#define __pyx_n_u_qualname __pyx_string_tab[95]
-#define __pyx_n_u_reduce __pyx_string_tab[96]
-#define __pyx_n_u_reduce_cython __pyx_string_tab[97]
-#define __pyx_n_u_reduce_ex __pyx_string_tab[98]
-#define __pyx_n_u_register __pyx_string_tab[99]
-#define __pyx_n_u_set_name __pyx_string_tab[100]
-#define __pyx_n_u_setdefault __pyx_string_tab[101]
-#define __pyx_n_u_setstate __pyx_string_tab[102]
-#define __pyx_n_u_setstate_cython __pyx_string_tab[103]
-#define __pyx_n_u_shape __pyx_string_tab[104]
-#define __pyx_n_u_size __pyx_string_tab[105]
-#define __pyx_n_u_start __pyx_string_tab[106]
-#define __pyx_n_u_step __pyx_string_tab[107]
-#define __pyx_n_u_stop __pyx_string_tab[108]
-#define __pyx_n_u_struct __pyx_string_tab[109]
-#define __pyx_n_u_t_xs __pyx_string_tab[110]
-#define __pyx_n_u_t_ys __pyx_string_tab[111]
-#define __pyx_n_u_test __pyx_string_tab[112]
-#define __pyx_n_u_unpack __pyx_string_tab[113]
-#define __pyx_n_u_update __pyx_string_tab[114]
-#define __pyx_n_u_values __pyx_string_tab[115]
+#define __pyx_n_u_name __pyx_string_tab[81]
+#define __pyx_n_u_name_2 __pyx_string_tab[82]
+#define __pyx_n_u_ndim __pyx_string_tab[83]
+#define __pyx_n_u_new __pyx_string_tab[84]
+#define __pyx_n_u_obj __pyx_string_tab[85]
+#define __pyx_n_u_pack __pyx_string_tab[86]
+#define __pyx_n_u_paths __pyx_string_tab[87]
+#define __pyx_n_u_pop __pyx_string_tab[88]
+#define __pyx_n_u_pyx_checksum __pyx_string_tab[89]
+#define __pyx_n_u_pyx_state __pyx_string_tab[90]
+#define __pyx_n_u_pyx_type __pyx_string_tab[91]
+#define __pyx_n_u_pyx_unpickle_Enum __pyx_string_tab[92]
+#define __pyx_n_u_pyx_vtable __pyx_string_tab[93]
+#define __pyx_n_u_qualname __pyx_string_tab[94]
+#define __pyx_n_u_reduce __pyx_string_tab[95]
+#define __pyx_n_u_reduce_cython __pyx_string_tab[96]
+#define __pyx_n_u_reduce_ex __pyx_string_tab[97]
+#define __pyx_n_u_register __pyx_string_tab[98]
+#define __pyx_n_u_set_name __pyx_string_tab[99]
+#define __pyx_n_u_setdefault __pyx_string_tab[100]
+#define __pyx_n_u_setstate __pyx_string_tab[101]
+#define __pyx_n_u_setstate_cython __pyx_string_tab[102]
+#define __pyx_n_u_shape __pyx_string_tab[103]
+#define __pyx_n_u_size __pyx_string_tab[104]
+#define __pyx_n_u_start __pyx_string_tab[105]
+#define __pyx_n_u_step __pyx_string_tab[106]
+#define __pyx_n_u_stop __pyx_string_tab[107]
+#define __pyx_n_u_struct __pyx_string_tab[108]
+#define __pyx_n_u_t_xs __pyx_string_tab[109]
+#define __pyx_n_u_t_ys __pyx_string_tab[110]
+#define __pyx_n_u_test __pyx_string_tab[111]
+#define __pyx_n_u_unpack __pyx_string_tab[112]
+#define __pyx_n_u_update __pyx_string_tab[113]
+#define __pyx_n_u_values __pyx_string_tab[114]
+#define __pyx_n_u_voice_forge_vits_clone_monotonic __pyx_string_tab[115]
 #define __pyx_n_u_x __pyx_string_tab[116]
 #define __pyx_kp_b_iso88591_uF_1_Qe1D_at4q_D __pyx_string_tab[117]
 #define __pyx_n_b_O __pyx_string_tab[118]
@@ -16538,7 +16538,7 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *__
   return __pyx_r;
 }
 
-/* "monotonic_align/core.pyx":5
+/* "voice_forge/vits_clone/monotonic_align/core.pyx":5
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -16546,7 +16546,7 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *__
  * cdef void maximum_path_each(int[:,::1] path, float[:,::1] value, int t_y, int t_x, float max_neg_val=-1e9) nogil:
 */
 
-static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice __pyx_v_path, __Pyx_memviewslice __pyx_v_value, int __pyx_v_t_y, int __pyx_v_t_x, struct __pyx_opt_args_15monotonic_align_4core_maximum_path_each *__pyx_optional_args) {
+static void __pyx_f_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice __pyx_v_path, __Pyx_memviewslice __pyx_v_value, int __pyx_v_t_y, int __pyx_v_t_x, struct __pyx_opt_args_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_each *__pyx_optional_args) {
   float __pyx_v_max_neg_val = __pyx_mstate_global->__pyx_k__6;
   int __pyx_v_x;
   int __pyx_v_y;
@@ -16575,7 +16575,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
     }
   }
 
-  /* "monotonic_align/core.pyx":13
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":13
  *   cdef float v_cur
  *   cdef float tmp
  *   cdef int index = t_x - 1             # <<<<<<<<<<<<<<
@@ -16584,7 +16584,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
 */
   __pyx_v_index = (__pyx_v_t_x - 1);
 
-  /* "monotonic_align/core.pyx":15
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":15
  *   cdef int index = t_x - 1
  * 
  *   for y in range(t_y):             # <<<<<<<<<<<<<<
@@ -16596,7 +16596,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_y = __pyx_t_3;
 
-    /* "monotonic_align/core.pyx":16
+    /* "voice_forge/vits_clone/monotonic_align/core.pyx":16
  * 
  *   for y in range(t_y):
  *     for x in range(max(0, t_x + y - t_y), min(t_x, y + 1)):             # <<<<<<<<<<<<<<
@@ -16624,7 +16624,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
     for (__pyx_t_5 = __pyx_t_8; __pyx_t_5 < __pyx_t_6; __pyx_t_5+=1) {
       __pyx_v_x = __pyx_t_5;
 
-      /* "monotonic_align/core.pyx":17
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":17
  *   for y in range(t_y):
  *     for x in range(max(0, t_x + y - t_y), min(t_x, y + 1)):
  *       if x == y:             # <<<<<<<<<<<<<<
@@ -16634,7 +16634,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
       __pyx_t_7 = (__pyx_v_x == __pyx_v_y);
       if (__pyx_t_7) {
 
-        /* "monotonic_align/core.pyx":18
+        /* "voice_forge/vits_clone/monotonic_align/core.pyx":18
  *     for x in range(max(0, t_x + y - t_y), min(t_x, y + 1)):
  *       if x == y:
  *         v_cur = max_neg_val             # <<<<<<<<<<<<<<
@@ -16643,7 +16643,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
 */
         __pyx_v_v_cur = __pyx_v_max_neg_val;
 
-        /* "monotonic_align/core.pyx":17
+        /* "voice_forge/vits_clone/monotonic_align/core.pyx":17
  *   for y in range(t_y):
  *     for x in range(max(0, t_x + y - t_y), min(t_x, y + 1)):
  *       if x == y:             # <<<<<<<<<<<<<<
@@ -16653,7 +16653,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
         goto __pyx_L7;
       }
 
-      /* "monotonic_align/core.pyx":20
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":20
  *         v_cur = max_neg_val
  *       else:
  *         v_cur = value[y-1, x]             # <<<<<<<<<<<<<<
@@ -16667,7 +16667,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
       }
       __pyx_L7:;
 
-      /* "monotonic_align/core.pyx":21
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":21
  *       else:
  *         v_cur = value[y-1, x]
  *       if x == 0:             # <<<<<<<<<<<<<<
@@ -16677,7 +16677,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
       __pyx_t_7 = (__pyx_v_x == 0);
       if (__pyx_t_7) {
 
-        /* "monotonic_align/core.pyx":22
+        /* "voice_forge/vits_clone/monotonic_align/core.pyx":22
  *         v_cur = value[y-1, x]
  *       if x == 0:
  *         if y == 0:             # <<<<<<<<<<<<<<
@@ -16687,7 +16687,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
         __pyx_t_7 = (__pyx_v_y == 0);
         if (__pyx_t_7) {
 
-          /* "monotonic_align/core.pyx":23
+          /* "voice_forge/vits_clone/monotonic_align/core.pyx":23
  *       if x == 0:
  *         if y == 0:
  *           v_prev = 0.             # <<<<<<<<<<<<<<
@@ -16696,7 +16696,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
 */
           __pyx_v_v_prev = 0.;
 
-          /* "monotonic_align/core.pyx":22
+          /* "voice_forge/vits_clone/monotonic_align/core.pyx":22
  *         v_cur = value[y-1, x]
  *       if x == 0:
  *         if y == 0:             # <<<<<<<<<<<<<<
@@ -16706,7 +16706,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
           goto __pyx_L9;
         }
 
-        /* "monotonic_align/core.pyx":25
+        /* "voice_forge/vits_clone/monotonic_align/core.pyx":25
  *           v_prev = 0.
  *         else:
  *           v_prev = max_neg_val             # <<<<<<<<<<<<<<
@@ -16718,7 +16718,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
         }
         __pyx_L9:;
 
-        /* "monotonic_align/core.pyx":21
+        /* "voice_forge/vits_clone/monotonic_align/core.pyx":21
  *       else:
  *         v_cur = value[y-1, x]
  *       if x == 0:             # <<<<<<<<<<<<<<
@@ -16728,7 +16728,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
         goto __pyx_L8;
       }
 
-      /* "monotonic_align/core.pyx":27
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":27
  *           v_prev = max_neg_val
  *       else:
  *         v_prev = value[y-1, x-1]             # <<<<<<<<<<<<<<
@@ -16742,7 +16742,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
       }
       __pyx_L8:;
 
-      /* "monotonic_align/core.pyx":28
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":28
  *       else:
  *         v_prev = value[y-1, x-1]
  *       value[y, x] += max(v_prev, v_cur)             # <<<<<<<<<<<<<<
@@ -16763,7 +16763,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
     }
   }
 
-  /* "monotonic_align/core.pyx":30
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":30
  *       value[y, x] += max(v_prev, v_cur)
  * 
  *   for y in range(t_y - 1, -1, -1):             # <<<<<<<<<<<<<<
@@ -16773,7 +16773,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
   for (__pyx_t_1 = (__pyx_v_t_y - 1); __pyx_t_1 > -1; __pyx_t_1-=1) {
     __pyx_v_y = __pyx_t_1;
 
-    /* "monotonic_align/core.pyx":31
+    /* "voice_forge/vits_clone/monotonic_align/core.pyx":31
  * 
  *   for y in range(t_y - 1, -1, -1):
  *     path[y, index] = 1             # <<<<<<<<<<<<<<
@@ -16784,7 +16784,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
     __pyx_t_9 = __pyx_v_index;
     *((int *) ( /* dim=1 */ ((char *) (((int *) ( /* dim=0 */ (__pyx_v_path.data + __pyx_t_10 * __pyx_v_path.strides[0]) )) + __pyx_t_9)) )) = 1;
 
-    /* "monotonic_align/core.pyx":32
+    /* "voice_forge/vits_clone/monotonic_align/core.pyx":32
  *   for y in range(t_y - 1, -1, -1):
  *     path[y, index] = 1
  *     if index != 0 and (index == y or value[y-1, index] < value[y-1, index-1]):             # <<<<<<<<<<<<<<
@@ -16812,7 +16812,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
     __pyx_L13_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "monotonic_align/core.pyx":33
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":33
  *     path[y, index] = 1
  *     if index != 0 and (index == y or value[y-1, index] < value[y-1, index-1]):
  *       index = index - 1             # <<<<<<<<<<<<<<
@@ -16821,7 +16821,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
 */
       __pyx_v_index = (__pyx_v_index - 1);
 
-      /* "monotonic_align/core.pyx":32
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":32
  *   for y in range(t_y - 1, -1, -1):
  *     path[y, index] = 1
  *     if index != 0 and (index == y or value[y-1, index] < value[y-1, index-1]):             # <<<<<<<<<<<<<<
@@ -16831,7 +16831,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
     }
   }
 
-  /* "monotonic_align/core.pyx":5
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":5
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -16842,7 +16842,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
   /* function exit code */
 }
 
-/* "monotonic_align/core.pyx":36
+/* "voice_forge/vits_clone/monotonic_align/core.pyx":36
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -16850,14 +16850,14 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_each(__Pyx_memviewslice
  * cpdef void maximum_path_c(int[:,:,::1] paths, float[:,:,::1] values, int[::1] t_ys, int[::1] t_xs) nogil:
 */
 
-static PyObject *__pyx_pw_15monotonic_align_4core_1maximum_path_c(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_11voice_forge_10vits_clone_15monotonic_align_4core_1maximum_path_c(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static void __pyx_f_15monotonic_align_4core_maximum_path_c(__Pyx_memviewslice __pyx_v_paths, __Pyx_memviewslice __pyx_v_values, __Pyx_memviewslice __pyx_v_t_ys, __Pyx_memviewslice __pyx_v_t_xs, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static void __pyx_f_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_c(__Pyx_memviewslice __pyx_v_paths, __Pyx_memviewslice __pyx_v_values, __Pyx_memviewslice __pyx_v_t_ys, __Pyx_memviewslice __pyx_v_t_xs, CYTHON_UNUSED int __pyx_skip_dispatch) {
   int __pyx_v_b;
   int __pyx_v_i;
   __Pyx_RefNannyDeclarations
@@ -16874,7 +16874,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_c(__Pyx_memviewslice __
   PyGILState_STATE __pyx_gilstate_save;
   __Pyx_RefNannySetupContext("maximum_path_c", 1);
 
-  /* "monotonic_align/core.pyx":39
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":39
  * @cython.wraparound(False)
  * cpdef void maximum_path_c(int[:,:,::1] paths, float[:,:,::1] values, int[::1] t_ys, int[::1] t_xs) nogil:
  *   cdef int b = paths.shape[0]             # <<<<<<<<<<<<<<
@@ -16883,7 +16883,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_c(__Pyx_memviewslice __
 */
   __pyx_v_b = (__pyx_v_paths.shape[0]);
 
-  /* "monotonic_align/core.pyx":41
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":41
  *   cdef int b = paths.shape[0]
  *   cdef int i
  *   for i in prange(b, nogil=True):             # <<<<<<<<<<<<<<
@@ -16928,7 +16928,7 @@ static void __pyx_f_15monotonic_align_4core_maximum_path_c(__Pyx_memviewslice __
                         {
                             __pyx_v_i = (int)(0 + 1 * __pyx_t_2);
 
-                            /* "monotonic_align/core.pyx":42
+                            /* "voice_forge/vits_clone/monotonic_align/core.pyx":42
  *   cdef int i
  *   for i in prange(b, nogil=True):
  *     maximum_path_each(paths[i], values[i], t_ys[i], t_xs[i])             # <<<<<<<<<<<<<<
@@ -16969,7 +16969,7 @@ __pyx_t_5.strides[1] = __pyx_v_values.strides[2];
 
 __pyx_t_6 = __pyx_v_i;
                             __pyx_t_7 = __pyx_v_i;
-                            __pyx_f_15monotonic_align_4core_maximum_path_each(__pyx_t_4, __pyx_t_5, (*((int *) ( /* dim=0 */ ((char *) (((int *) __pyx_v_t_ys.data) + __pyx_t_6)) ))), (*((int *) ( /* dim=0 */ ((char *) (((int *) __pyx_v_t_xs.data) + __pyx_t_7)) ))), NULL); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 42, __pyx_L8_error)
+                            __pyx_f_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_each(__pyx_t_4, __pyx_t_5, (*((int *) ( /* dim=0 */ ((char *) (((int *) __pyx_v_t_ys.data) + __pyx_t_6)) ))), (*((int *) ( /* dim=0 */ ((char *) (((int *) __pyx_v_t_xs.data) + __pyx_t_7)) ))), NULL); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 42, __pyx_L8_error)
                             __PYX_XCLEAR_MEMVIEW(&__pyx_t_4, 0);
                             __pyx_t_4.memview = NULL; __pyx_t_4.data = NULL;
                             __PYX_XCLEAR_MEMVIEW(&__pyx_t_5, 0);
@@ -17051,7 +17051,7 @@ PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
         #endif
       }
 
-      /* "monotonic_align/core.pyx":41
+      /* "voice_forge/vits_clone/monotonic_align/core.pyx":41
  *   cdef int b = paths.shape[0]
  *   cdef int i
  *   for i in prange(b, nogil=True):             # <<<<<<<<<<<<<<
@@ -17072,7 +17072,7 @@ PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
       }
   }
 
-  /* "monotonic_align/core.pyx":36
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":36
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -17086,22 +17086,22 @@ PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   __PYX_XCLEAR_MEMVIEW(&__pyx_t_4, 1);
   __PYX_XCLEAR_MEMVIEW(&__pyx_t_5, 1);
-  __Pyx_AddTraceback("monotonic_align.core.maximum_path_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("voice_forge.vits_clone.monotonic_align.core.maximum_path_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   __pyx_L0:;
   __Pyx_RefNannyFinishContextNogil()
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_15monotonic_align_4core_1maximum_path_c(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_11voice_forge_10vits_clone_15monotonic_align_4core_1maximum_path_c(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_15monotonic_align_4core_1maximum_path_c = {"maximum_path_c", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_15monotonic_align_4core_1maximum_path_c, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_15monotonic_align_4core_1maximum_path_c(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_11voice_forge_10vits_clone_15monotonic_align_4core_1maximum_path_c = {"maximum_path_c", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_11voice_forge_10vits_clone_15monotonic_align_4core_1maximum_path_c, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11voice_forge_10vits_clone_15monotonic_align_4core_1maximum_path_c(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17191,11 +17191,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_values, 1);
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_t_ys, 1);
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_t_xs, 1);
-  __Pyx_AddTraceback("monotonic_align.core.maximum_path_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("voice_forge.vits_clone.monotonic_align.core.maximum_path_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_15monotonic_align_4core_maximum_path_c(__pyx_self, __pyx_v_paths, __pyx_v_values, __pyx_v_t_ys, __pyx_v_t_xs);
+  __pyx_r = __pyx_pf_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_c(__pyx_self, __pyx_v_paths, __pyx_v_values, __pyx_v_t_ys, __pyx_v_t_xs);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -17209,7 +17209,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_15monotonic_align_4core_maximum_path_c(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_paths, __Pyx_memviewslice __pyx_v_values, __Pyx_memviewslice __pyx_v_t_ys, __Pyx_memviewslice __pyx_v_t_xs) {
+static PyObject *__pyx_pf_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_c(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_paths, __Pyx_memviewslice __pyx_v_values, __Pyx_memviewslice __pyx_v_t_ys, __Pyx_memviewslice __pyx_v_t_xs) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -17222,7 +17222,7 @@ static PyObject *__pyx_pf_15monotonic_align_4core_maximum_path_c(CYTHON_UNUSED P
   if (unlikely(!__pyx_v_values.memview)) { __Pyx_RaiseUnboundLocalError("values"); __PYX_ERR(0, 36, __pyx_L1_error) }
   if (unlikely(!__pyx_v_t_ys.memview)) { __Pyx_RaiseUnboundLocalError("t_ys"); __PYX_ERR(0, 36, __pyx_L1_error) }
   if (unlikely(!__pyx_v_t_xs.memview)) { __Pyx_RaiseUnboundLocalError("t_xs"); __PYX_ERR(0, 36, __pyx_L1_error) }
-  __pyx_f_15monotonic_align_4core_maximum_path_c(__pyx_v_paths, __pyx_v_values, __pyx_v_t_ys, __pyx_v_t_xs, 1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_f_11voice_forge_10vits_clone_15monotonic_align_4core_maximum_path_c(__pyx_v_paths, __pyx_v_values, __pyx_v_t_ys, __pyx_v_t_xs, 1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 36, __pyx_L1_error)
   __pyx_t_1 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
@@ -17232,7 +17232,7 @@ static PyObject *__pyx_pf_15monotonic_align_4core_maximum_path_c(CYTHON_UNUSED P
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("monotonic_align.core.maximum_path_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("voice_forge.vits_clone.monotonic_align.core.maximum_path_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -17366,7 +17366,7 @@ static PyType_Slot __pyx_type___pyx_array_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_array_spec = {
-  "monotonic_align.core.array",
+  "voice_forge.vits_clone.monotonic_align.core.array",
   sizeof(struct __pyx_array_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_SEQUENCE,
@@ -17400,7 +17400,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "monotonic_align.core.""array", /*tp_name*/
+  "voice_forge.vits_clone.monotonic_align.core.""array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -17545,7 +17545,7 @@ static PyType_Slot __pyx_type___pyx_MemviewEnum_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_MemviewEnum_spec = {
-  "monotonic_align.core.Enum",
+  "voice_forge.vits_clone.monotonic_align.core.Enum",
   sizeof(struct __pyx_MemviewEnum_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
@@ -17555,7 +17555,7 @@ static PyType_Spec __pyx_type___pyx_MemviewEnum_spec = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "monotonic_align.core.""Enum", /*tp_name*/
+  "voice_forge.vits_clone.monotonic_align.core.""Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -17822,7 +17822,7 @@ static PyType_Slot __pyx_type___pyx_memoryview_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_memoryview_spec = {
-  "monotonic_align.core.memoryview",
+  "voice_forge.vits_clone.monotonic_align.core.memoryview",
   sizeof(struct __pyx_memoryview_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
@@ -17856,7 +17856,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "monotonic_align.core.""memoryview", /*tp_name*/
+  "voice_forge.vits_clone.monotonic_align.core.""memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -17999,7 +17999,7 @@ static PyType_Slot __pyx_type___pyx_memoryviewslice_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_memoryviewslice_spec = {
-  "monotonic_align.core._memoryviewslice",
+  "voice_forge.vits_clone.monotonic_align.core._memoryviewslice",
   sizeof(struct __pyx_memoryviewslice_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_SEQUENCE,
@@ -18009,7 +18009,7 @@ static PyType_Spec __pyx_type___pyx_memoryviewslice_spec = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "monotonic_align.core.""_memoryviewslice", /*tp_name*/
+  "voice_forge.vits_clone.monotonic_align.core.""_memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -18557,13 +18557,13 @@ __Pyx_RefNannySetupContext("PyInit_core", 0);
   if (__Pyx_InitConstants(__pyx_mstate) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   stringtab_initialized = 1;
   if (__Pyx_InitGlobals() < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__pyx_module_is_main_monotonic_align__core) {
+  if (__pyx_module_is_main_voice_forge__vits_clone__monotonic_align__core) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name_2, __pyx_mstate_global->__pyx_n_u_main) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "monotonic_align.core")) {
-      if (unlikely((PyDict_SetItemString(modules, "monotonic_align.core", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "voice_forge.vits_clone.monotonic_align.core")) {
+      if (unlikely((PyDict_SetItemString(modules, "voice_forge.vits_clone.monotonic_align.core", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -19072,7 +19072,7 @@ __Pyx_RefNannySetupContext("PyInit_core", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_pyx_unpickle_Enum, __pyx_t_4) < (0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "monotonic_align/core.pyx":7
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":7
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * cdef void maximum_path_each(int[:,::1] path, float[:,::1] value, int t_y, int t_x, float max_neg_val=-1e9) nogil:             # <<<<<<<<<<<<<<
@@ -19081,14 +19081,14 @@ __Pyx_RefNannySetupContext("PyInit_core", 0);
 */
   __pyx_mstate_global->__pyx_k__6 = (-1e9);
 
-  /* "monotonic_align/core.pyx":36
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":36
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
  * @cython.wraparound(False)
  * cpdef void maximum_path_c(int[:,:,::1] paths, float[:,:,::1] values, int[::1] t_ys, int[::1] t_xs) nogil:
 */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_15monotonic_align_4core_1maximum_path_c, 0, __pyx_mstate_global->__pyx_n_u_maximum_path_c, NULL, __pyx_mstate_global->__pyx_n_u_monotonic_align_core, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_11voice_forge_10vits_clone_15monotonic_align_4core_1maximum_path_c, 0, __pyx_mstate_global->__pyx_n_u_maximum_path_c, NULL, __pyx_mstate_global->__pyx_n_u_voice_forge_vits_clone_monotonic, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_4);
@@ -19096,7 +19096,7 @@ __Pyx_RefNannySetupContext("PyInit_core", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_maximum_path_c, __pyx_t_4) < (0)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "monotonic_align/core.pyx":1
+  /* "voice_forge/vits_clone/monotonic_align/core.pyx":1
  * cimport cython             # <<<<<<<<<<<<<<
  * from cython.parallel import prange
  * 
@@ -19114,7 +19114,7 @@ __Pyx_RefNannySetupContext("PyInit_core", 0);
   __Pyx_XDECREF(__pyx_t_5);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init monotonic_align.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init voice_forge.vits_clone.monotonic_align.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -19128,7 +19128,7 @@ __Pyx_RefNannySetupContext("PyInit_core", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init monotonic_align.core");
+    PyErr_SetString(PyExc_ImportError, "init voice_forge.vits_clone.monotonic_align.core");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -19236,25 +19236,25 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 8; } index[] = {{2},{68},{35},{54},{37},{60},{24},{52},{26},{34},{29},{33},{45},{22},{15},{179},{37},{30},{32},{1},{1},{1},{1},{1},{8},{5},{6},{15},{23},{25},{8},{7},{6},{2},{6},{35},{9},{30},{50},{8},{21},{20},{32},{22},{30},{37},{5},{8},{20},{8},{15},{3},{15},{18},{4},{1},{9},{17},{18},{5},{8},{15},{6},{9},{5},{5},{6},{7},{8},{12},{2},{10},{5},{13},{5},{8},{8},{14},{7},{4},{10},{20},{4},{8},{4},{7},{3},{4},{5},{3},{14},{11},{10},{19},{14},{12},{10},{17},{13},{8},{12},{10},{12},{19},{5},{4},{5},{4},{4},{6},{4},{4},{8},{6},{6},{6},{1},{51},{1}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (1128 bytes) */
-const char* const cstring = "BZh91AY&SY\216\315\005\271\000\000u\177\373\355\000b\000b\347dW\277#\373\000\277\377\377\360@@@@@@@@\000@@\000@\000P\004)\266\336\n\240\002\216\241\242MOML\232\236Q\342\230\032\rF\232\003A\2046\2206\247\240M\247\252\rS\302FM5\036\2424\03144\000\320\r\031\030\004h\304\320\006\232\020\211\220\032!\223\020\032\000\000\000\000\000\320q\223&\214C\023L\004\014\t\246\010\30114\323@\006\020Ji\004\302LSh\214\2012\217$\033Si\000hi\240\003G\250'\264\213\206\264\323K\031\305\325\271K\331\376\305\003\3345CS\234\330\265\266\234M+\241\003\341\325N\225\272\260\212%\"!\320\202^\007\030\234\036#k\265\312\360h\253\225\247\002\204\205\313\365\303\322\255\215\271X\305x3\366\246\360\260b\032hT(\206\rU'R\nIN\023\205\016\212k\231\205\251\323PoiV\220{\014U\231\004\241(=\226\224\324\321\033\247.<\34031r\322\340\n\255\t\327\305\204!\3468 [U\n(\023n\260\345\031\262\262\366\245\010\242\016\037\264\260\202\365Cq\321\022c\026\025^\2448\354\346\205\246\331\\i<b\225\"\344\027S*(}\030\367\330\3726\311\262\000sq \001\023e$\220\257\272i\031\333$\204!q\225\210\017\177]X\031\250\310\363MB\320\361\2455\242\341\201*C\250\273\2614l\223\3353\023Ut\356L\272\335\223\315\222\242\226\317\3473a\355\360\313\372\3624\261\257\207\353,\230\337\327\241F\007\017~\021\010\3577k\257 K\005\201\315\273AU\235L\216\265#\316C\362,\260\202>\273p\371\016R\207\017HD\010\007\025\343\313\277\205\353\n\265e`yOu\311\312JJ?uG'\327\336dz:&\277\310\227f1\020\223e\002e\242\302c\363\232q\324 d9\036\214:%\264\223(\364(\025\013A\323\025qP\241\026\231X;\000\322\237\016Z\301\2165\273\205\260@\235\026J\244\362\271,V\260NM\013C\032JDl\3574\260\215\002\025}\211\274\220$I\353\007\245\233]\266\212\303\000\272\312\037j\032\0204\274R\270\371\005\025\r\210Q+q\210B\344p\352)\004\275KTn\336\271\2773G\327\032\345\203v\244\243\305\232\210\251\305\034Or\360\310<x\355mX\314/\315S>\355!\236\215g\356z\222<\375\220j\005\2017*f\341\246+\207\273\233\222&\216\306\007\222HJW\235\233X\3251^\336F\236\221\202LR$\361\331\231\213I\tNc\026\n\004jF\034\372^\025\326t""\360#87SMlc<\270@4\220w\255f\355B\265jK\307\247\325 \213*\234_V\266\010\214\233~\213u\030Lc1\247\rfQ\232X\273<\236\305b\351\t\341\276\020\213A<\035*\236S>,\336\344\237\324\252\301\331f\233\270L\263\342\211&\202M6)#\221$$\"r\300AQ\260\204\032\031+\020\344\340\025A\215\313\233\033\270\325s\310!\\\010y\336\316\017\335yz\313H*\0353\237P\242^\016Hs\006g8b\t\t\ru\313\322S\225\257s~\357\216\262\337\327K\361dy\223\340\361\363m\332\370F\333\362\312\233\030\351\356\227\256n\231\007\000M\253B\306\343<F/fR\231Q\253\330\360\207\033\300\334\321\034\036N\315c\247W6\210\223\271\205\343\025\204]\030\2305\345R\036a\212\266\354\",\332KxY\031\351\tVjW\21685!6\277\025\264\2722\275\275,\207GB\302\315\251\252\3217\021\004y\263#\023\004\340f\266h\370Z\324\315\357N\3701y\311\320\220\325\253\2301\013\372)\005\266d\305\233\034\030|\333=\010W%\200\031^\371\021\200\335\252\370Q\246\363\325S\235\337\306\377\355\311\205T\037\224Ra0\006\337\266we\276\360|\035\342\222G\022N\036\203\014\254,\\A\327\027\to(\200\210\222\"\222A\355O\265\204I\030\362\305\013'\340}\261rOi\261O\253\2500%\310\t\360\263\301\3750\227\203&\207\2133m\2169\372\366\251\225j\243\374]\311\024\341BB;4\026\344";
-    PyObject *data = __Pyx_DecompressString(cstring, 1128, 2);
+    const struct { const unsigned int length: 8; } index[] = {{2},{68},{35},{54},{37},{60},{24},{52},{26},{34},{29},{33},{45},{22},{15},{179},{37},{30},{32},{1},{1},{1},{1},{1},{8},{5},{6},{15},{23},{25},{7},{6},{2},{6},{35},{9},{30},{50},{8},{21},{20},{32},{22},{30},{37},{47},{5},{8},{20},{8},{15},{3},{15},{18},{4},{1},{9},{17},{18},{5},{8},{15},{6},{9},{5},{5},{6},{7},{8},{12},{2},{10},{5},{13},{5},{8},{8},{14},{7},{4},{10},{4},{8},{4},{7},{3},{4},{5},{3},{14},{11},{10},{19},{14},{12},{10},{17},{13},{8},{12},{10},{12},{19},{5},{4},{5},{4},{4},{6},{4},{4},{8},{6},{6},{6},{43},{1},{51},{1}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (1168 bytes) */
+const char* const cstring = "BZh91AY&SYGbI<\000\000w\377\373\355\000b\000b\347\344W\277#\373\000\277\377\377\360@@@@@@@@\000@@\000@\000P\004LI{\006\324\305\354Rp\321\010d&\247\350\t\242\0321\006\206\200\031\006\2154i\223M6\232\207\0312hb14`\021\200\230@\030\t\246\21524\003\r4\020\020*~\204\247\351O\323$\365C\365C\324h\000\014A\220\036\247\251\265\002SR\024\375&\324\324\362OQ\265=M2i\240\000\000\r\000\000\000%\020\232d$\332M\251\215&\200=@4h\000\000\000\000\256\202-\232UUU\327\266\005\277U\214y\206\201\350\023\2419\317&\r/+\002]\276\201\357\003\271\324\270\026\021\204\211#\271\204\273j\242\301\177%\245|%p\254\357\372\321q8\241\351\376y{\236\232y\245\020\367\n\276\274\356\037\030eo\351\330\350 w\371,\3449l\361\260q]\033\302p{\353<\026\364*\323\017\223\025fA8\234>m:aym><\267\201\325\307\355\301\300\0334\025_S\010\226F\265jp\246KOt\334q\002\021\030\305\341_\007\323\242i\203\017\316\364\240\261\333]\032$z\201i\332\\\233\252\337\314WWqYR\374mL\215bF$\346J\204\020\345\341r\010i5\220\010z\312@\tN\326D=n\235\246\255\322b#VV ?_\300\254\r/\321\351K\255\303\313\004\201\357\227\014\n\025!K\252\240\221\030\302\334\242\t\032\251U\022\027;rY!41\216\255\301`|a\213\366\240\320\370\227\017\333\221\020\236\343B\310\004\001}*\001S\211\245\2260\034x\345/\325H\261F+\307]\210\354#{\311\226V\251\3136\014e\342\006\r\320p\r\n\317\315\325\273}\352\032\251X\260\020\030\313m\304\242\014\027\363\324(\022\345\320d=\\$\177\327\027D\030\002\tL\230HY\320\024\036\271\025\nY\206AC\360\237\010\324B\027\340XT\0132\224\025P\250P\217\225\225\203\260\r:\361\361\260c\332\273\270\267\010'\233&\311\274\365\236|\270\251=\226'\005\250\306\261\001\356\253\"RoP\032\313\221Oa\000\221\013VZY;6Y\314\346\005\326q\340\241\242\016\017$\304w\202\212\207(\276\261\001\r&;\270\220`\315S\"Wg\241\361<A\250\226\026D\361Pfj\266D\263\014\026\214Z\032\326\366;a\222\273\251R\024\205\020\211An\312\\\352RiF\330\330\243\315}&\244BpR\240\310\251m\201 E:\354\306\241\032\010,Tf`\315\310]\020\024\312a\220e\331\t\330\324\325T \341\364Z\244\241$QU\357\020\230 \016""\210\346\341\271;cS\341\214\270I+\2239%\\\244)\267[B\344\201\254\265=\211\0021\010I\222\376\374\200\344\220dJ\331RZ\204<'V\207u\020\024\025\220I6\331w|VD\236J\2135\300]\324\220U\267\263:0*\312M\307\262B\332`\220\377A\252\001\316\311%P$,\213\201\020Q\201)$\024\201\251$\022\010\224\t\202\005BM\231\033#`\332\365\201R\006\027\023\226\222\302\245\305 b\0354\007k\262v\003\"Y@\376\202\201\3410g\275\372\002\270\267\0238\220p\366g\026N\t\t\r\004W\200\226\266\204\013\271\233V\244\273\206Xg29\225\232\277=uY\275\267e\2258\344\203\244~2R\204\r\340\024\330\215a\264g\200Ak!\211\001P\225\367\025\233\256\3546\243\205\001aQ,9lQ\250\"\025D\367\031,I\303\020a\267@f\"(;-\362D\206z'\223\261\221\237\020\233=\244\306\\\241\260\t\252\330\256\020FL&\336d9\027\223\346j\212\225)\254\020G]\004q\217N\002\205>\213;Z\231\255\351\345d\027\224)\004\204\255TM\003_\315F:\310H\034\320o@\271\246z\006\256F`\014\205\357\220v\t\314\336x\212\244\332{\r}\265_\237\017\034\004\200\251\212\234G\342#\270>\233\313\006,3\224\013A\257\337\2326\231cG\365\2636\307*\314\366\226\215\230:\213L\017\022C\304\222\016\347T\302$M\\HT\272\303\034n \351\262\030\227\232\340\017\025\306\031\010\302\316\367\366A\177ey%\333^-S\317\237\233S\265\261\210\377\027rE8P\220GbI<";
+    PyObject *data = __Pyx_DecompressString(cstring, 1168, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (1004 bytes) */
-const char* const cstring = "x\332}T=o\0347\020\215\021CuT\244\037\027\306\331\200\265\260\001\025A\240(p$\031\270\"\262\022!i\t.9{\307\210K\256\370q\332u\2252\345\225*U\272t\351\237\2222?!?!3\334=\335)\nR\354.\227\234\2177o\036\347[xk-h\323\242\213\306\273\010]@\205\332\270\305v\023\236khsLP#\030\247\261G\r\322ip>A\264\206\314\177\310M\203\001V\006o@{\214\345\010\373\316G\204\230\202\321\030O\244\003\357\354\000*\240L\010\022\352\321)-e\002\023Ay\227\314\"\373\034)\t\264\330\3720T\344\305\241d\214f\341 y g}P\342\214\026\234r2\232\002\337\004\223dmq2\030A5\301\267\377\347[\312\202\033\223\226\220\206\016a6\355\247 ],el]F3\3620DU\332\341\356t\22703\2220\032\235\265]\032 .%\205N\271#p\215\017\240\206\264\364\256\222!\310a^\000\370\234\3007P\373\354t\204\027\262\247(\317\365\313\371\343\\#\371\271\353|H\250\347n%\255\241.y\215\257\230x2\246&\315\324\014(\317\214\222q!\263W\260 \257\215\361\010\207\270.i\216~,\005\376\312\005\022\204sOT\226\326\234\024\224\\\217Fkj\014D2Q\310m\245$\245\177\016.\316.\016\016\2779,\262\010\370\033\245\217\204\256V\226:Gr\340\232\262\261\211\2221\275\261\202y\003\203\317\340\220`R[;\262\333uHKt\0201\361\002f\245\0272Q\335\202\334I\233\263\211W\263B\366~'m\304\352\375\003\362\010\362$0\251\024\306\r\233\227\t;h\345P\370#=\177\300\340\267D\377\342\212r($\251q\205\201\204\221\260\345\177_sQ\325\361\354\345\367Rk\341\230\036.\026\210\241\327\275\362\3262\034jL%ku\264\243e6\032\301\036\377{{#\241c\345\003V\335\320k\0239?\026\024\013\005/\270]\213\242\"\256\204/%\366\t]*Wd{?M\034]4\243\215\346\003\302\321w\360\372\221\306\234\247\02662\333\004B\004\324Y\241\020\240s)\330yw@-]\031i\351T\031g\022\035\216e\037G\264M\345d\213\033Y\237{\207G\343\315\326\017J|\274\307\n\274\257\364\301\371\375n\276\247]Z\353U\031\017\014\030\264L\262\372\217\323Q\272\034c\232.\325\333\313\223\371\374\314Z\323E\023\205\270\030zzNI\241\342\234(\373\031\233K\274\316\350\024\262\300\253\255\326\251[\233\250b\324\213\214\203S\306W\324\024\272\216\306a\254eDE\234\2606\205\330,\026\230\230n\376%#aH\233A""*\254\245\272R$AbOsz\241Y\361\202@\215\\\022\006\272\244\350r[n\022\206\340Cc\345\"R\267Z\231\246\253*D\223\235\342d\224&&F'\214\246\247\345\013O_\036\027\034\364\036\345\330\372\251\377B\264\222\000\321\2737mnE'\323R(\032a<\277xH\320\221\327\331\226/\365\323;\243\004\r\205\205\343\262\221;-\304\364&\231\321\033o\004\027\320Qu\034\214fb'\004IV\250%\252\253H9\312\337\004\225\227\245\354\262\312\2563\352\212\222\235\271\215\335\252\214h\256\357:K;f\332j\362~5\252wg\203\212\246\345\302D\232<B\320\200\230P\322j\222vYO0v\326\233HE9L\021m\007:\303.&OO\310*%\321\307$\006\352q\242c\301\270\251\334\334\221\n\221Ff\306\330\377\376\344\357\275/\276\374\352\217\274~w\373\354\366\315_{\373\353\375\365\263?\237~\275\376i\215\267onO\357\366\356\344]\372x\370\361\372\323\323O\247\237\237|\336\177\377\017\221b\320\373";
-    PyObject *data = __Pyx_DecompressString(cstring, 1004, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (1030 bytes) */
+const char* const cstring = "x\332}T;o\0347\020\216\021CuT\244\037\027\306\331\200\265\262\001\025A\240(p$\031\270\"\262\034!i\t\0369\273\307\210K\256\3708\335\272r\231R\245J\225.]\372\247\244\364O\310O\310\014w\357!+H\261\273\\r\036\337|\363q~\204\327\326\2026-\272h\274\213\320\005T\250\215k6\233\360TC\233c\202\031\202q\032\227\250A:\r\316'\210\326\220\371/\271\2561\300\302\3405h\217\261\034\341\262\363\021!\246`4\306c\351\300;\333\203\n(\023\202\204\331\340\224\3462\201\211\240\274K\246\311>GJ\002-\266>\364\025yq(\031\243i\034$\017\344\254\367J\234\301\202S\216Fc\340\353`\222\234Y\034\r\006Pu\360\355\377\371\226\262\340\332\2449\244\276C\230\214\373)H\027K\031\033\227\301\214<\014Q\225\266\270;\331&\314\014$\014F\247m\227z\210sI\241S\356\010\\\355\003\250>\315\275\253d\010\262\237\026\000>'\3605\314|v:\3023\271\244(O\365\363\351\303\\\003\371\271\353|H\250\247n!\255\241.y\215/\230x2\246&M\324\004(\317\204\222q!\223\027\320\220\327\312x\200C\\\2274\207\277\226\002\377\340\002\t\302\231'*Kk\216\013J\256G\24353\014D2Q\310m\245$\245\177\016\316O\317\367\016~8(\262\010\370'\245\217\204n\246,u\216\344\3005ec\023%czc\005\323\032z\237\301!\301\244\266vd\267\355\220\346\350 b\342\005LJ/d\242\272\005\271\2236'#\257f\201\354\375F\332\210\325\333{\344\021\344Q`R)\214+6/\022v\320\312\276\360Gz~\217\301o\210\376\335\025\345PHR\343\002\003\t#a\313\377~\306EUG\223\347?K\255\205cz\270X \206^.\225\267\226\341Pc*9S\207[Zf\243\001\354\321\327\333+\t\035i\0239/\226\354\215\202g\334\246\246\250\207+\340\313\210\313\204.\225\253\261\271\227&\016.\232QF\363\036\341\360'x\371@[\316S\353j\231m\002!\002\352\254P\010\320\271\024\352\274\333\243V.\214\264t\252\2143\211\016\207r\217\"\332\272r\262\305\225\234\317\274\303\303\341F\353{\245=\334c\345\255+\274w\276\336\315k\272\245\265^\225\261\300\200A\313$\253\3778\035$\3131\306\251R-<\315\037A\0257\270\2770)\ne\t\342~\353\t\255wF\t\222z\343\366\225\017Xu\375\362\365\305\361tzj\255\351\242\211B\234\367KzNH\310\342\214\030\376\r\353\013\274\312\350\024\362=\2506W\202\232""\272\002!\006Y\311\330;e|E\221\351\326\032\207q&#*\242\220%,\304j\321`\342\356\360/\031\tC\022\016R\341L\252KEJ%\2625\247\027\232/\206 P\003\365\204\201\3562\272\334\226\013\207!\370P[\331D*\265\225i\274\321B\324\331)NFibbt\302hzZ\236\013\364\345\251\302A\327(\007\245\214r\021\242\225\004\210\336K\323\346Vt2\315\205\242I\307c\216g\t\035y\235-}Y\004\3537)\220\336x-\030lG\225\260#\215\311N\010\342X\2509\252\313H\361\312\337\010\213\227\245\304\262\312\2563\352\222\002\237\272\225\335\242Lm\256\345*K;d\332\310u\275\032\204\275\265A\005\322\2621\221\206\221\02043F\224\264\032U_\326#\214\255\365*R\021\025\323A\333\201\316\260\213\311\323\023\262JI,c\022=\3653\321\261`\334Tn\356H\240HS4c\334\022`\265\021`\365\225\000Y&\270\374\360\350\237\235o\276\375\356\257|\363\346\366\311\355\253/;\2737\2737O\376~\374\375\315\273\033\274}u{r\267s'\357\322\307\203\217W\237\036\177:\371\374\350\363\356\333\177\001U\273\351\240";
+    PyObject *data = __Pyx_DecompressString(cstring, 1030, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (1891 bytes) */
-const char* const bytes = ": All dimensions preceding dimension %d must be indexed and not slicedBuffer view does not expose stridesCan only create a buffer that is contiguous in memory.Cannot assign to read-only memoryviewCannot create writable memory view from read-only memoryviewCannot index with type 'Cannot transpose memoryview with indirect dimensionsDimension %d is not directEmpty shape tuple for cython.arrayIndex out of bounds (axis %d)Indirect dimensions not supportedInvalid mode, expected 'c' or 'fortran', got Invalid shape in axis <MemoryView of Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.Out of bounds on buffer access (axis Step may not be zero (axis %d)Unable to convert item to object.>')?add_note and  at 0xcollections.abc<contiguous and direct><contiguous and indirect>core.pyxdisableenablegc (got got differing extents in dimension isenableditemsize <= 0 for cython.arrayno default __reduce__ due to non-trivial __cinit__ object>self.name is not None<strided and direct><strided and direct or indirect><strided and indirect>unable to allocate array data.unable to allocate shape and strides.ASCIIEllipsis__Pyx_PyDict_NextRefSequenceView.MemoryViewabcallocate_bufferasyncio.coroutinesbasec__class____class_getitem__cline_in_tracebackcount__dict__dtype_is_objectencodeenumerateerrorflagsformatfortran__func____getstate__id__import__index_is_coroutineitemsitemsize__main__maximum_path_cmemviewmode__module__monotonic_align.corename__name__ndim__new__objpackpathspop__pyx_checksum__pyx_state__pyx_type__pyx_unpickle_Enum__pyx_vtable____qualname____reduce____reduce_cython____reduce_ex__register__set_name__setdefault__setstate____setstate_cython__shapesizestartstepstopstructt_xst_ys__test__unpackupdatevaluesx\200\001\360\006\000\003\020\210u\220F\230!\2301\340\006\021\220\021\220!\330\004\025\220Q\220e\2301\230D\240\006\240a\240t\2504\250q\260\004\260D\270\001\270""\021O";
+    #else /* compression: none (1953 bytes) */
+const char* const bytes = ": All dimensions preceding dimension %d must be indexed and not slicedBuffer view does not expose stridesCan only create a buffer that is contiguous in memory.Cannot assign to read-only memoryviewCannot create writable memory view from read-only memoryviewCannot index with type 'Cannot transpose memoryview with indirect dimensionsDimension %d is not directEmpty shape tuple for cython.arrayIndex out of bounds (axis %d)Indirect dimensions not supportedInvalid mode, expected 'c' or 'fortran', got Invalid shape in axis <MemoryView of Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.Out of bounds on buffer access (axis Step may not be zero (axis %d)Unable to convert item to object.>')?add_note and  at 0xcollections.abc<contiguous and direct><contiguous and indirect>disableenablegc (got got differing extents in dimension isenableditemsize <= 0 for cython.arrayno default __reduce__ due to non-trivial __cinit__ object>self.name is not None<strided and direct><strided and direct or indirect><strided and indirect>unable to allocate array data.unable to allocate shape and strides.voice_forge/vits_clone/monotonic_align/core.pyxASCIIEllipsis__Pyx_PyDict_NextRefSequenceView.MemoryViewabcallocate_bufferasyncio.coroutinesbasec__class____class_getitem__cline_in_tracebackcount__dict__dtype_is_objectencodeenumerateerrorflagsformatfortran__func____getstate__id__import__index_is_coroutineitemsitemsize__main__maximum_path_cmemviewmode__module__name__name__ndim__new__objpackpathspop__pyx_checksum__pyx_state__pyx_type__pyx_unpickle_Enum__pyx_vtable____qualname____reduce____reduce_cython____reduce_ex__register__set_name__setdefault__setstate____setstate_cython__shapesizestartstepstopstructt_xst_ys__test__unpackupdatevaluesvoice_forge.vits_clone.monotonic_align.corex\200\001\360\006\000\003\020\210u\220F\230!\2301\340\006\021\220\021\220!\330\004\025\220Q\220e""\2301\230D\240\006\240a\240t\2504\250q\260\004\260D\270\001\270\021O";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
@@ -19351,7 +19351,7 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   {
     const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 36};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_paths, __pyx_mstate->__pyx_n_u_values, __pyx_mstate->__pyx_n_u_t_ys, __pyx_mstate->__pyx_n_u_t_xs};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_core_pyx, __pyx_mstate->__pyx_n_u_maximum_path_c, __pyx_mstate->__pyx_kp_b_iso88591_uF_1_Qe1D_at4q_D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_voice_forge_vits_clone_monotonic_2, __pyx_mstate->__pyx_n_u_maximum_path_c, __pyx_mstate->__pyx_kp_b_iso88591_uF_1_Qe1D_at4q_D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;
