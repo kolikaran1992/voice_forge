@@ -397,7 +397,16 @@ class Trainer:
         self.net_g.eval()
 
         with torch.no_grad():
-            for batch in self.eval_loader:
+            # Create tqdm bar
+            pbar = tqdm(
+                enumerate(self.eval_loader),
+                total=len(self.eval_loader),
+                desc=f"Eval",
+                colour="green",
+                leave=False,  # keeps logs clean
+            )
+
+            for batch_idx, batch in pbar:
                 x, x_lengths, spec, spec_lengths, y, y_lengths, *rest = self._to_device(
                     *batch
                 )
