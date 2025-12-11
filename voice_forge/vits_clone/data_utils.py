@@ -116,7 +116,7 @@ class TextAudioSpeakerDataset(Dataset):
         self,
         audiopaths_and_text: List[Dict[str, Any]],
         hps_config: Any,  # hparams instance
-        cleaner_names: List[str] = ["english_cleaners"],
+        cleaner_names: List[str] = ["english_cleaners2"],
     ):
 
         super().__init__()

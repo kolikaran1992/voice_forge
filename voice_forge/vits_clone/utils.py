@@ -15,6 +15,11 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging
 
 
+# ---------------------------------------------------------
+# CHECKPOINTING
+# ---------------------------------------------------------
+
+
 def load_checkpoint(checkpoint_path, model, optimizer=None):
     assert os.path.isfile(checkpoint_path)
     checkpoint_dict = torch.load(checkpoint_path, map_location="cpu")
@@ -22,38 +27,41 @@ def load_checkpoint(checkpoint_path, model, optimizer=None):
     learning_rate = checkpoint_dict["learning_rate"]
     if optimizer is not None:
         optimizer.load_state_dict(checkpoint_dict["optimizer"])
+
     saved_state_dict = checkpoint_dict["model"]
+
     if hasattr(model, "module"):
         state_dict = model.module.state_dict()
     else:
         state_dict = model.state_dict()
+
     new_state_dict = {}
     for k, v in state_dict.items():
         try:
             new_state_dict[k] = saved_state_dict[k]
         except:
-            logger.info("%s is not in the checkpoint" % k)
+            logger.info(f"{k} is not in the checkpoint")
             new_state_dict[k] = v
+
     if hasattr(model, "module"):
         model.module.load_state_dict(new_state_dict)
     else:
         model.load_state_dict(new_state_dict)
-    logger.info(
-        "Loaded checkpoint '{}' (iteration {})".format(checkpoint_path, iteration)
-    )
+
+    logger.info(f"Loaded checkpoint '{checkpoint_path}' (iteration {iteration})")
     return model, optimizer, learning_rate, iteration
 
 
 def save_checkpoint(model, optimizer, learning_rate, iteration, checkpoint_path):
     logger.info(
-        "Saving model and optimizer state at iteration {} to {}".format(
-            iteration, checkpoint_path
-        )
+        f"Saving model and optimizer state at iteration {iteration} to {checkpoint_path}"
     )
+
     if hasattr(model, "module"):
         state_dict = model.module.state_dict()
     else:
         state_dict = model.state_dict()
+
     torch.save(
         {
             "model": state_dict,
@@ -63,6 +71,11 @@ def save_checkpoint(model, optimizer, learning_rate, iteration, checkpoint_path)
         },
         checkpoint_path,
     )
+
+
+# ---------------------------------------------------------
+# SUMMARIZATION / LOGGING
+# ---------------------------------------------------------
 
 
 def summarize(
@@ -92,17 +105,31 @@ def latest_checkpoint_path(dir_path, regex="G_*.pth"):
     return x
 
 
-def plot_spectrogram_to_numpy(spectrogram):
+# ---------------------------------------------------------
+# MATPLOTLIB FIXED PLOTTING HELPERS
+# ---------------------------------------------------------
+
+
+def _ensure_matplotlib():
     global MATPLOTLIB_FLAG
     if not MATPLOTLIB_FLAG:
         import matplotlib
 
         matplotlib.use("Agg")
         MATPLOTLIB_FLAG = True
+
         mpl_logger = logging.getLogger("matplotlib")
         mpl_logger.setLevel(logging.WARNING)
-    import matplotlib.pylab as plt
-    import numpy as np
+
+
+def plot_spectrogram_to_numpy(spectrogram):
+    """
+    Works reliably across new Matplotlib versions (3.3–3.9+).
+    Uses buffer_rgba() instead of deprecated tostring_rgb().
+    """
+    _ensure_matplotlib()
+
+    import matplotlib.pyplot as plt
 
     fig, ax = plt.subplots(figsize=(10, 2))
     im = ax.imshow(spectrogram, aspect="auto", origin="lower", interpolation="none")
@@ -112,29 +139,29 @@ def plot_spectrogram_to_numpy(spectrogram):
     plt.tight_layout()
 
     fig.canvas.draw()
-    data = np.fromstring(fig.canvas.tostring_rgb(), dtype=np.uint8, sep="")
-    data = data.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+    buf = np.asarray(fig.canvas.buffer_rgba())
+    data = buf[:, :, :3].copy()  # Drop alpha channel → RGB image
     plt.close()
     return data
 
 
 def plot_alignment_to_numpy(alignment, info=None):
-    global MATPLOTLIB_FLAG
-    if not MATPLOTLIB_FLAG:
-        import matplotlib
+    """
+    Same fix as spectrogram plotting — avoids deprecated APIs.
+    """
+    _ensure_matplotlib()
 
-        matplotlib.use("Agg")
-        MATPLOTLIB_FLAG = True
-        mpl_logger = logging.getLogger("matplotlib")
-        mpl_logger.setLevel(logging.WARNING)
-    import matplotlib.pylab as plt
-    import numpy as np
+    import matplotlib.pyplot as plt
 
     fig, ax = plt.subplots(figsize=(6, 4))
     im = ax.imshow(
-        alignment.transpose(), aspect="auto", origin="lower", interpolation="none"
+        alignment.transpose(),
+        aspect="auto",
+        origin="lower",
+        interpolation="none",
     )
     fig.colorbar(im, ax=ax)
+
     xlabel = "Decoder timestep"
     if info is not None:
         xlabel += "\n\n" + info
@@ -143,10 +170,15 @@ def plot_alignment_to_numpy(alignment, info=None):
     plt.tight_layout()
 
     fig.canvas.draw()
-    data = np.fromstring(fig.canvas.tostring_rgb(), dtype=np.uint8, sep="")
-    data = data.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+    buf = np.asarray(fig.canvas.buffer_rgba())
+    data = buf[:, :, :3].copy()
     plt.close()
     return data
+
+
+# ---------------------------------------------------------
+# WAV / TEXT HELPERS
+# ---------------------------------------------------------
 
 
 def load_wav_to_torch(full_path):
@@ -158,6 +190,11 @@ def load_filepaths_and_text(filename, split="|"):
     with open(filename, encoding="utf-8") as f:
         filepaths_and_text = [line.strip().split(split) for line in f]
     return filepaths_and_text
+
+
+# ---------------------------------------------------------
+# HPARAMS LOADING
+# ---------------------------------------------------------
 
 
 def get_hparams(init=True):
@@ -179,6 +216,7 @@ def get_hparams(init=True):
 
     config_path = args.config
     config_save_path = os.path.join(model_dir, "config.json")
+
     if init:
         with open(config_path, "r") as f:
             data = f.read()
@@ -187,8 +225,8 @@ def get_hparams(init=True):
     else:
         with open(config_save_path, "r") as f:
             data = f.read()
-    config = json.loads(data)
 
+    config = json.loads(data)
     hparams = HParams(**config)
     hparams.model_dir = model_dir
     return hparams
@@ -199,7 +237,6 @@ def get_hparams_from_dir(model_dir):
     with open(config_save_path, "r") as f:
         data = f.read()
     config = json.loads(data)
-
     hparams = HParams(**config)
     hparams.model_dir = model_dir
     return hparams
@@ -209,34 +246,37 @@ def get_hparams_from_file(config_path):
     with open(config_path, "r") as f:
         data = f.read()
     config = json.loads(data)
-
     hparams = HParams(**config)
     return hparams
+
+
+# ---------------------------------------------------------
+# GIT HASH CHECK (Optional)
+# ---------------------------------------------------------
 
 
 def check_git_hash(model_dir):
     source_dir = os.path.dirname(os.path.realpath(__file__))
     if not os.path.exists(os.path.join(source_dir, ".git")):
-        logger.warn(
-            "{} is not a git repository, therefore hash value comparison will be ignored.".format(
-                source_dir
-            )
-        )
+        logger.warn(f"{source_dir} is not a git repository, skipping git hash check.")
         return
 
     cur_hash = subprocess.getoutput("git rev-parse HEAD")
-
     path = os.path.join(model_dir, "githash")
+
     if os.path.exists(path):
         saved_hash = open(path).read()
         if saved_hash != cur_hash:
             logger.warn(
-                "git hash values are different. {}(saved) != {}(current)".format(
-                    saved_hash[:8], cur_hash[:8]
-                )
+                f"git hash mismatch: {saved_hash[:8]} (saved) != {cur_hash[:8]} (current)"
             )
     else:
         open(path, "w").write(cur_hash)
+
+
+# ---------------------------------------------------------
+# LOGGER + WRITER HELPERS
+# ---------------------------------------------------------
 
 
 def get_logger(model_dir, filename="train.log"):
@@ -245,19 +285,58 @@ def get_logger(model_dir, filename="train.log"):
     logger.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter("%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s")
+
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
-    h = logging.FileHandler(os.path.join(model_dir, filename))
-    h.setLevel(logging.DEBUG)
-    h.setFormatter(formatter)
-    logger.addHandler(h)
+
+    handler = logging.FileHandler(os.path.join(model_dir, filename))
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
     return logger
+
+
+def get_writer(log_dir):
+    from torch.utils.tensorboard import SummaryWriter
+
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir, exist_ok=True)
+    return SummaryWriter(log_dir=log_dir)
+
+
+def write_scalars(writer, step, scalar_dict):
+    for key, value in scalar_dict.items():
+        if torch.is_tensor(value):
+            value = value.item()
+        writer.add_scalar(key, value, step)
+
+
+def write_images(writer, step, image_dict):
+    for key, img in image_dict.items():
+        writer.add_image(key, img, step, dataformats="HWC")
+
+
+def write_audio(writer, step, audio_dict, sampling_rate):
+    for key, audio_tensor in audio_dict.items():
+        if torch.is_tensor(audio_tensor) and audio_tensor.dim() == 1:
+            audio_tensor = audio_tensor.unsqueeze(0)
+        writer.add_audio(
+            key,
+            audio_tensor,
+            step,
+        )
+
+
+# ---------------------------------------------------------
+# HParams container
+# ---------------------------------------------------------
 
 
 class HParams:
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
-            if type(v) == dict:
+            if isinstance(v, dict):
                 v = HParams(**v)
             self[k] = v
 

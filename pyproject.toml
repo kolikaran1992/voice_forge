@@ -7,19 +7,22 @@ dependencies = [
   "dynaconf>=3.2.12,<4.0.0",
   "jinja2>=3.1.6,<4.0.0",
   "pytz>=2025.2,<2026.0",
-  "pytest>=9.0.1,<10.0.0",
-  "huggingface-hub>=1.1.5,<2.0.0", # Data deps (NumPy / Pandas)
+  "pytest>=9.0.1,<10.0.0", # Data deps (NumPy / Pandas)
+  "huggingface-hub>=1.1.5,<2.0.0",
   "numpy>=2.0",
   "pandas>=2.0", # Git dependencies
   "crongle @ git+https://github.com/kolikaran1992/crongle.git", # Kaggle tools
-  "kagglehub>=0.3.13,<0.4.0", # PyTorch stack (versions you specified)
+  "kagglehub>=0.3.13,<0.4.0", # PyTorch stack
   "torch==2.9.0",
-  "torchaudio==2.9.0", # Audio & TTS deps (all versions compatible with NumPy 2.x)
+  "torchaudio==2.9.0", # tensorboard
+  "tensorboard>=2.0,<3.0", # PyTorch Lightning (compatible with torch 2.9.0)
+  "pytorch-lightning>=2.5.0,<3.0.0", # Audio & TTS deps
   "librosa>=0.10.2",
   "phonemizer>=3.3.0", # Visualization
   "matplotlib>=3.8,<4.0", # Misc
   "world4py>=0.1.1,<0.2.0",
   "unidecode>=1.4.0,<2.0.0",
+  "soundfile (>=0.13.1,<0.14.0)",
 ]
 
 description = ""
