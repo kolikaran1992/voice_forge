@@ -1,0 +1,3 @@
+poetry.lock merge=ours
+pyproject.toml merge=ours
+MANIFEST.in merge=ours
