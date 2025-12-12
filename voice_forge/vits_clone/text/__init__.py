@@ -26,6 +26,23 @@ def text_to_sequence(text, cleaner_names):
     return sequence
 
 
+def phonemes_to_sequence(phonemes):
+    """Converts a string of phonemes to a sequence of IDs corresponding to the symbols in the text.
+    Args:
+      text: string to convert to a sequence
+      cleaner_names: names of the cleaner functions to run the text through
+    Returns:
+      List of integers corresponding to the symbols in the text
+    """
+    sequence = []
+
+    clean_text = phonemes
+    for symbol in clean_text:
+        symbol_id = _symbol_to_id[symbol]
+        sequence += [symbol_id]
+    return sequence
+
+
 def cleaned_text_to_sequence(cleaned_text):
     """Converts a string of text to a sequence of IDs corresponding to the symbols in the text.
     Args:

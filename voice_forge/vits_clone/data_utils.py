@@ -7,7 +7,7 @@ from torch import nn
 from torch.utils.data import Dataset
 from typing import List, Tuple, Dict, Any
 
-from voice_forge.vits_clone.text import text_to_sequence
+from voice_forge.vits_clone.text import text_to_sequence, phonemes_to_sequence
 
 
 def load_and_resample_audio(audio_path: str, target_sr: int) -> Tuple[np.ndarray, int]:
@@ -120,10 +120,14 @@ class TextAudioSpeakerDataset(Dataset):
     ):
 
         super().__init__()
+        self._base_init(audiopaths_and_text, hps_config)
+        self.cleaner_names = cleaner_names
 
+    def _base_init(
+        self, audiopaths_and_text: List[Dict[str, Any]], hps_config: Any
+    ) -> None:
         # List of dictionaries, e.g., [{'wav_file_path': 'a.wav', 'utterance': 'Hello.', 'speaker_id': 0}, ...]
         self.audiopaths_and_text = audiopaths_and_text
-        self.cleaner_names = cleaner_names
 
         # Store configuration
         self.hps = hps_config
@@ -138,6 +142,13 @@ class TextAudioSpeakerDataset(Dataset):
     def __len__(self) -> int:
         return self._length
 
+    def _get_text_ids(self, sample_info: dict) -> torch.LongTensor:
+        text = sample_info["utterance"]
+        # Use your provided function
+        text_ids = text_to_sequence(text, self.cleaner_names)
+        text_tensor = torch.LongTensor(text_ids)
+        return text_tensor
+
     def __getitem__(
         self, index: int
     ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
@@ -150,10 +161,7 @@ class TextAudioSpeakerDataset(Dataset):
         sample_info = self.audiopaths_and_text[index]
 
         # 1. Text Processing
-        text = sample_info["utterance"]
-        # Use your provided function
-        text_ids = text_to_sequence(text, self.cleaner_names)
-        text_tensor = torch.LongTensor(text_ids)
+        text_tensor = self._get_text_ids(sample_info)
 
         # 2. Audio Processing (Waveform and Mel-Spectrogram)
         audio_path = sample_info["wav_file_path"]
@@ -176,6 +184,31 @@ class TextAudioSpeakerDataset(Dataset):
 
         # Return all necessary tensors
         return text_tensor, mel_tensor, wav_tensor, sid_tensor
+
+
+class TextAudioSpeakerPrePhonemeDataset(TextAudioSpeakerDataset):
+    """
+    A PyTorch Dataset for VITS, handling text-to-sequence conversion,
+    audio loading, and mel-spectrogram computation.
+
+    Expects text to be pre-phonemised, reducing phonemise overhead/dependencies and
+    errors
+    """
+
+    def __init__(
+        self,
+        audiopaths_and_text,
+        hps_config,
+        phoneme_col_name: str = "utterance_phonemes2",
+    ):
+        super(TextAudioSpeakerDataset, self).__init__()
+        self._base_init(audiopaths_and_text, hps_config)
+        self.phoneme_col_name = phoneme_col_name
+
+    def _get_text_ids(self, sample_info: dict) -> torch.LongTensor:
+        text_ids = phonemes_to_sequence(sample_info[self.phoneme_col_name])
+        text_tensor = torch.LongTensor(text_ids)
+        return text_tensor
 
 
 class TextAudioSpeakerCollate:
