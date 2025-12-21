@@ -576,3 +576,61 @@ class Trainer:
                 self.scheduler_g.step()
             if self.scheduler_d is not None:
                 self.scheduler_d.step()
+
+    def train_from_pre_trained_generator(self, gen_path: str, strict: bool = True):
+        """
+        Load a pretrained SynthesizerTrn generator and begin training
+        from epoch 1 with a freshly initialized discriminator.
+
+        Args:
+            gen_path: Path to pretrained generator .pth file.
+            strict: Whether to strictly enforce weight key matching.
+        """
+
+        if not os.path.isfile(gen_path):
+            raise FileNotFoundError(f"Pretrained generator file not found: {gen_path}")
+
+        self.logger.info(f"=== Loading pretrained generator from: {gen_path} ===")
+
+        ckpt = torch.load(gen_path, map_location=self.device)
+
+        # Accept formats:
+        #   - raw state_dict
+        #   - {"model": state_dict}
+        #   - {"generator": state_dict}
+        if isinstance(ckpt, dict):
+            if "model" in ckpt:
+                state_dict = ckpt["model"]
+            elif "generator" in ckpt:
+                state_dict = ckpt["generator"]
+            else:
+                state_dict = ckpt
+        else:
+            state_dict = ckpt
+
+        missing, unexpected = self.net_g.load_state_dict(state_dict, strict=strict)
+
+        if missing:
+            self.logger.warning(f"Missing keys when loading generator: {missing}")
+        if unexpected:
+            self.logger.warning(f"Unexpected keys when loading generator: {unexpected}")
+
+        self.logger.info("Pretrained generator loaded successfully.")
+
+        # --------------------------------------
+        # Reset training state
+        # --------------------------------------
+        self.start_epoch = 1
+        self.global_step = 0
+
+        # Move generator to device (D already initialized on device in __init__)
+        self.net_g.to(self.device)
+
+        self.logger.info(
+            "=== Starting training using pretrained generator (D is fresh) ==="
+        )
+
+        # --------------------------------------
+        # Begin training normally
+        # --------------------------------------
+        self.train()
