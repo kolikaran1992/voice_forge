@@ -8,6 +8,7 @@ from torch.utils.data import Dataset
 from typing import List, Tuple, Dict, Any
 
 from voice_forge.vits_clone.text import text_to_sequence, phonemes_to_sequence
+from voice_forge.vits_clone import commons
 
 
 def load_and_resample_audio(audio_path: str, target_sr: int) -> Tuple[np.ndarray, int]:
@@ -146,6 +147,8 @@ class TextAudioSpeakerDataset(Dataset):
         text = sample_info["utterance"]
         # Use your provided function
         text_ids = text_to_sequence(text, self.cleaner_names)
+        if self.hps.data.add_blank:
+            text_ids = commons.intersperse(text_ids, 0)
         text_tensor = torch.LongTensor(text_ids)
         return text_tensor
 
@@ -207,6 +210,8 @@ class TextAudioSpeakerPrePhonemeDataset(TextAudioSpeakerDataset):
 
     def _get_text_ids(self, sample_info: dict) -> torch.LongTensor:
         text_ids = phonemes_to_sequence(sample_info[self.phoneme_col_name])
+        if self.hps.data.add_blank:
+            text_ids = commons.intersperse(text_ids, 0)
         text_tensor = torch.LongTensor(text_ids)
         return text_tensor
 
