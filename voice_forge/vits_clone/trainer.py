@@ -101,8 +101,6 @@ class Trainer:
             self._seed_everything(seed)
             self.logger.info(f"Seed set to: {seed}")
 
-        self.freeze_g = False
-
     def _seed_everything(self, seed):
         random.seed(seed)
         np.random.seed(seed)
@@ -141,53 +139,48 @@ class Trainer:
         return result
 
     def _train_epoch(self, epoch):
-        if not self.freeze_g:
-            self.net_g.train()
-        else:
-            self.net_g.eval()
-
+        self.net_g.train()
         self.net_d.train()
 
+        # Create tqdm bar
         pbar = tqdm(
             enumerate(self.train_loader),
             total=len(self.train_loader),
             desc=f"Epoch {epoch}",
             colour="green",
-            leave=False,
+            leave=False,  # keeps logs clean
         )
 
         for batch_idx, batch in pbar:
+
+            # Expect batch to be a tuple like (x, x_lengths, spec, spec_lengths, y, y_lengths, ...)
             x, x_lengths, spec, spec_lengths, y, y_lengths, *_ = batch
+            # Move to device
             x, x_lengths, spec, spec_lengths, y, y_lengths = self._to_device(
                 x, x_lengths, spec, spec_lengths, y, y_lengths
             )
 
+            # ----------------------------------
             # 1. Backward pass: discriminator
+            # ----------------------------------
             disc_out = self._backward_discriminator(
                 x, x_lengths, spec, spec_lengths, y, y_lengths
             )
 
-            # 2. Backward pass: generator (Only if not frozen)
-            if not self.freeze_g:
-                gen_out = self._backward_generator(disc_out)
-            else:
-                # Create a dummy gen_out for logging compatibility
-                gen_out = {
-                    k: 0.0
-                    for k in [
-                        "loss_total",
-                        "loss_mel",
-                        "loss_fm",
-                        "loss_dur",
-                        "loss_kl",
-                        "grad_norm_g",
-                    ]
-                }
+            # ----------------------------------
+            # 2. Backward pass: generator
+            # ----------------------------------
+            gen_out = self._backward_generator(disc_out)
 
-            # 3. Logging & Eval
+            # ----------------------------------
+            # Logging
+            # ----------------------------------
             if self.global_step % int(self.hps.train.log_interval) == 0:
                 self._log_step(epoch, batch_idx, disc_out, gen_out)
 
+            # ----------------------------------
+            # Evaluation
+            # ----------------------------------
             if (
                 self.eval_loader is not None
                 and self.global_step % int(self.hps.train.eval_interval) == 0
@@ -195,29 +188,24 @@ class Trainer:
                 self._evaluate()
                 self._save_checkpoint(epoch)
 
+            # increment step (kept at end of loop as original)
             self.global_step += 1
 
     # ------------------------------------------------------
     # Discriminator Backward
     # ------------------------------------------------------
     def _backward_discriminator(self, x, x_lengths, spec, spec_lengths, y, y_lengths):
+
         hps = self.hps
 
-        # 1. Generator Forward Pass
-        # If frozen, we wrap ONLY this part in no_grad to save memory
-        if self.freeze_g:
-            with torch.no_grad():
-                y_hat, l_length, attn, ids_slice, x_mask, z_mask, latent = self.net_g(
-                    x, x_lengths, spec, spec_lengths
-                )
-        else:
-            with torch.amp.autocast(self.device.type, enabled=self.use_amp):
-                y_hat, l_length, attn, ids_slice, x_mask, z_mask, latent = self.net_g(
-                    x, x_lengths, spec, spec_lengths
-                )
-
-        # 2. Pre-process segments (Still inside autocast if enabled)
+        # Use device-type string (e.g. "cuda" or "cpu") for new autocast API
         with torch.amp.autocast(self.device.type, enabled=self.use_amp):
+            # Forward through generator to get fake audio + slices
+            y_hat, l_length, attn, ids_slice, x_mask, z_mask, latent = self.net_g(
+                x, x_lengths, spec, spec_lengths
+            )
+
+            # GT mel from spec
             mel = spec_to_mel_torch(
                 spec,
                 self._mel("filter_length"),
@@ -226,27 +214,27 @@ class Trainer:
                 self._mel("fmin"),
                 self._mel("fmax"),
             )
+
             segment_frames = int(hps.train.segment_size // self._mel("hop_length"))
+
             y_mel = commons.slice_segments(mel, ids_slice, segment_frames)
+
+            # Slice real waveform
             y_slice = commons.slice_segments(
                 y, ids_slice * int(self._mel("hop_length")), int(hps.train.segment_size)
             )
 
-            # 3. Discriminator Forward Pass
-            # THIS MUST ALWAYS HAVE GRADIENTS ENABLED
-            # We detach y_hat so gradients don't try to go back to the Generator
+            # Discriminator forward (detach fake for D update)
             y_d_hat_r, y_d_hat_g, _, _ = self.net_d(y_slice, y_hat.detach())
 
-        # 4. Compute loss and backward
+        # compute loss in FP32 (explicitly disable autocast)
         with torch.amp.autocast(self.device.type, enabled=False):
             loss_disc, losses_disc_r, losses_disc_g = discriminator_loss(
                 y_d_hat_r, y_d_hat_g
             )
 
         self.optim_d.zero_grad()
-        self.scaler.scale(
-            loss_disc
-        ).backward()  # Now loss_disc will have a grad_fn from net_d
+        self.scaler.scale(loss_disc).backward()
         self.scaler.unscale_(self.optim_d)
         grad_norm_d = commons.clip_grad_value_(self.net_d.parameters(), None)
         self.scaler.step(self.optim_d)
@@ -588,98 +576,3 @@ class Trainer:
                 self.scheduler_g.step()
             if self.scheduler_d is not None:
                 self.scheduler_d.step()
-
-    def train_from_pre_trained_generator(self, gen_path: str, strict: bool = True):
-        """
-        Load a pretrained SynthesizerTrn generator and begin training
-        from epoch 1 with a freshly initialized discriminator.
-
-        Args:
-            gen_path: Path to pretrained generator .pth file.
-            strict: Whether to strictly enforce weight key matching.
-        """
-
-        if not os.path.isfile(gen_path):
-            raise FileNotFoundError(f"Pretrained generator file not found: {gen_path}")
-
-        self.logger.info(f"=== Loading pretrained generator from: {gen_path} ===")
-
-        ckpt = torch.load(gen_path, map_location=self.device)
-
-        # Accept formats:
-        #   - raw state_dict
-        #   - {"model": state_dict}
-        #   - {"generator": state_dict}
-        if isinstance(ckpt, dict):
-            if "model" in ckpt:
-                state_dict = ckpt["model"]
-            elif "generator" in ckpt:
-                state_dict = ckpt["generator"]
-            else:
-                state_dict = ckpt
-        else:
-            state_dict = ckpt
-
-        missing, unexpected = self.net_g.load_state_dict(state_dict, strict=strict)
-
-        if missing:
-            self.logger.warning(f"Missing keys when loading generator: {missing}")
-        if unexpected:
-            self.logger.warning(f"Unexpected keys when loading generator: {unexpected}")
-
-        self.logger.info("Pretrained generator loaded successfully.")
-
-        # --------------------------------------
-        # Reset training state
-        # --------------------------------------
-        self.start_epoch = 1
-        self.global_step = 0
-
-        # Move generator to device (D already initialized on device in __init__)
-        self.net_g.to(self.device)
-
-        self.logger.info(
-            "=== Starting training using pretrained generator (D is fresh) ==="
-        )
-
-        # --------------------------------------
-        # Begin training normally
-        # --------------------------------------
-        self.train()
-
-    def fine_tune_discriminator_only(self, gen_path: str, strict: bool = True):
-        """
-        Loads a pretrained generator, freezes its parameters, and
-        starts a training loop where only the discriminator is updated.
-        """
-        if not os.path.isfile(gen_path):
-            raise FileNotFoundError(f"Pretrained generator file not found: {gen_path}")
-
-        self.logger.info(
-            f"=== Loading generator for D-only fine-tuning: {gen_path} ==="
-        )
-
-        # 1. Load Generator Weights (matching your existing logic)
-        ckpt = torch.load(gen_path, map_location=self.device)
-        if isinstance(ckpt, dict):
-            state_dict = ckpt.get("model", ckpt.get("generator", ckpt))
-        else:
-            state_dict = ckpt
-
-        self.net_g.load_state_dict(state_dict, strict=strict)
-
-        # 2. Freeze Generator
-        for param in self.net_g.parameters():
-            param.requires_grad = False
-        self.net_g.eval()
-        self.freeze_g = True
-
-        # 3. Reset training state
-        self.start_epoch = 1
-        self.global_step = 0
-        self.net_g.to(self.device)
-
-        self.logger.info("Generator frozen. Starting Discriminator fine-tuning.")
-
-        # 4. Start training
-        self.train()
